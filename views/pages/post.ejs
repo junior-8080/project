@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>admin</title>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
+            <a class="navbar-brand" href="http://localhost:3001/"><img src="/images/logo1.jpg" width="50px"
+                    height="50px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:3001/admin">Home</a>
+                    </li>
+                </ul>
+                <span class="nav-item">
+                    <a class="nav-link" href="http://localhost:3001/admin/profile"><i
+                            class="fa fa-user">&nbsp;</i><%=email%></a>
+                </span>
+            </div>
+        </nav>
+        <div class="row row-container">
+            <div class="col-md-2">
+                <%- include('../partials/sidenav'); %>
+            </div>
+            <div class="col-md-8" style="margin-left: auto;margin-right: auto;">
+                <p class="heading">UPLOAD PRODUCT</p>
+                <form id="requestForm" enctype="multipart/form-data">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name" required
+                                placeholder="E.g:blender,shoe,bag,phone,fridge,laptop,charger">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="brand">Brand:</label>
+                            <input type="text" class="form-control" id="brand" name="brand">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="price">Price:</label>
+                            <input type="number" min="0" class="form-control" id="price" name="price" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label for="status">Status:</label><br>
+                            <select id="status" class="form-control">
+                                <option value="New" name="status">New</option>
+                                <option value="Used" name="status">Used</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="model">Category:</label>
+                            <!-- <input type="text" class="form-control" id="cate" name="model"> -->
+                            <select id="category" class="form-control">
+                                <option value="Electronics" name="cat">Electronics</option>
+                                <option value="Clothings" name="cat">Clothings</option>
+                                <option value="Food items" name="cat">Food Items</option>
+                                <option value="Free items" name="cat">Free items</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Description:</label><br>
+                            <textarea col="12" rows="1" class="form-control" name="description"
+                                id="description"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2 col-md-4 imgUp">
+                            <div class="imagePreview"></div>
+                            <label class="btn btn-primary">
+                                Upload<input type="file" class="uploadFile img" value="Upload Photo"
+                                    style="width: 0px;height: 0px;overflow: hidden;" name="image">
+                            </label>
+                        </div><!-- col-2 -->
+                        <i class="fa fa-plus imgAdd"></i>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="post">Post</button>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <a href="#" class="nav-link"><i class="fa fa-facebook-official"></i></a>
+            <a href="#" class="nav-link"><i class="fa fa-instagram"></i></a>
+            <a href="#" class="nav-link"><i class="fa fa-linkedin"></i></a>
+            <a href="#" class="nav-link"><i class="fa fa-twitter"></i></a>
+        </footer>
+    </div>
+    <%- include('../partials/footer'); %>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="/js/admin.js"></script>
+</body>
+
+</html>

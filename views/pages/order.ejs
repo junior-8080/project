@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>admin</title>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
+            <a class="navbar-brand" href="http://localhost:3001/"><img src="/images/logo1.jpg" width="50px"
+                    height="50px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:3001/admin">Home</a>
+                    </li>
+                </ul>
+                <span class="nav-item">
+                    <a class="nav-link" href="http://localhost:3001/admin/profile"><i
+                            class="fas fa-user">&nbsp;</i><%=email%></a>
+                </span>
+            </div>
+        </nav>
+        <div class="row row-container">
+            <div class="col-md-2">
+                <%- include('../partials/sidenav'); %>
+            </div>
+            <div class="col-md-10">
+                <p class="heading">Orders</p>
+                <table id="example" class=" display" width="100%">
+                    <thead>
+                        <th scope="col">Product Id</th>
+                        <th scope="col">Serial Number</th>
+                        <th scope="col">Time</th>
+                    </thead>
+                    <tbody>
+                        <% orders.forEach(order => {%>
+                        <tr class="view">
+                            <td><%=order.product_id%></td>
+                            <td><%=order.serial_number%></td>
+                            <td><%=order.serial_time%></td>
+                        </tr>
+                        <%}) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <footer>
+            <a href="#" class="nav-link"><i class="fa fa-facebook-official"></i></a>
+            <a href="#" class="nav-link"><i class="fa fa-instagram"></i></a>
+            <a href="#" class="nav-link"><i class="fa fa-linkedin"></i></a>
+            <a href="#" class="nav-link"><i class="fa fa-twitter"></i></a>
+        </footer>
+    </div>
+    <%- include('../partials/footer'); %>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+    <script src="/js/admin.js"></script>
+</body>
+
+</html>

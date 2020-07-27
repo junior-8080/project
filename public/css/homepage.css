@@ -1,0 +1,170 @@
+body {
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+    margin-top: 0px;
+}
+
+#nav {
+    padding: 2px;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 1;
+    background-color: rgb(168, 150, 150);
+}
+
+#navbarContent>.nav-item>.nav-link {
+    color: rgb(116, 116, 167);
+    font-weight: 600;
+}
+
+#navbarContent>.nav-item>#email:hover {
+    color: blue;
+    font-weight: 600;
+}
+
+#navbarContent>.nav-item>#logout:hover {
+    color: red;
+}
+.navbar-nav > .nav-item > .nav-link {
+    color:rgb(116, 116, 167);
+    font-weight: 600;
+}
+
+#categories>.nav-item>.nav-link {
+    color: rgb(116, 116, 167);
+    font-weight: 600;
+
+}
+
+#categories>.nav-item:hover {
+    background-color: whitesmoke;
+}
+
+.col-2{
+    height: 100vh;
+}
+
+#categories {
+    padding: 5px;
+    background-color: rgb(211, 205, 205);
+    height: 100%;
+
+}
+
+.row {
+    margin-top: 50px;
+}
+
+#products {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 100vh;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+}
+
+#warning {
+    font-size: 12px;
+    color: red;
+}
+
+
+.list {
+    list-style: none;
+    margin-left: -20px;
+    margin-top: 5px;
+}
+
+.link:hover {
+    text-decoration: none;
+}
+
+.pname {
+    font-size: 14px;
+}
+
+.link-btn {
+    font-size: 14px;
+    color: red;
+}
+
+.link-btn:hover {
+    text-decoration: none;
+}
+
+.card {
+    margin: 5px 10px 5px 10px;
+    height: fit-content;
+    box-shadow: 0px -3px 6px 2px rgba(0, 0, 0, 0.2);
+}
+
+.card-cat {
+    margin: 5px 10px 5px 10px;
+    height: fit-content;
+}
+
+.card>div {
+    margin-left: 5px;
+    margin-bottom: 0px;
+}
+
+.fa-comment {
+    cursor: pointer;
+}
+
+.modal {
+    margin-top: 0px;
+    /* margin-bottom: 0px; */
+}
+
+.maodal-content {
+    margin-bottom: 0px;
+    margin-top: 2px;
+}
+
+#safety {
+    padding-top: 70px;
+    text-align: center;
+    background-color: rgb(116, 116, 167);
+    color: rgb(255, 255, 255);
+}
+
+.category-tag {
+    margin-top: 70px;
+    text-align: center;
+    font-weight: 100;
+    padding: 5px;
+    background-color: rgb(116, 116, 167);
+    color: inherit;
+    color: rgb(255, 255, 255);
+}
+
+/* .category-tag > h5 {
+    */
+.modal1 {
+    z-index: 3;
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: x-large;
+    background-color:rgb(116, 116, 167) ;
+
+}
+
+footer > .nav-link > i {
+    color:#ffffff;
+}
+#profile-header{
+    text-align: center;
+    border-bottom: 2px solid rgb(116, 116, 167);
+}

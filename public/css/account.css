@@ -1,0 +1,32 @@
+body {
+    height: 100vh;
+    font-family: 'Quicksand',Arial, Helvetica, sans-serif;
+}
+
+.filetype{
+    font-size:11px;
+}
+#nav {
+    padding: 2px;
+    /* text-align: center; */
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 1;
+}
+#body-content{
+    margin-top: 80px;
+}
+.remove{
+    font-size: 11px;
+    width:fit-content;
+}
+#uploads{
+    display:flex;
+}
+.hidden{
+    visibility: hidden;;
+}
+.img-responsive{
+    margin: 0px;
+}

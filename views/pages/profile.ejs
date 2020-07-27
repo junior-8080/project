@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>admin</title>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
+            <a class="navbar-brand" href="http://localhost:3001/"><img src="/images/logo1.jpg" width="50px"
+                    height="50px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:3001/admin">Home</a>
+                    </li>
+                </ul>
+                <span class="nav-item">
+                    <a class="nav-link" href="http://localhost:3001/admin/profile"><i
+                            class="fas fa-user"></i><%=email%></a>
+                </span>
+            </div>
+        </nav>
+        <div class="row row-container">
+            <div class="col-md-2">
+                <%- include('../partials/sidenav'); %>
+            </div>
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form class="form-horizontal" role="form">
+                            <h6 class="lead">Personal info</h6>
+                            <hr class="lead">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label" for="emai">Email:</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" type="email" value="<%=email%>" id="profilEmail">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label" for="profileNumber">Phone number:</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" type="text" value="<%=phonenumber%>" id="profileNumber">
+                                </div>
+                            </div>
+                            <!-- <div class="form-group" id="submit-change">
+                                <label clsave-changeass="col-md-3 control-label"></label>
+                                <div class="col-md-8">
+                                    <button class="btn btn-primary btn-sm" id="save-change">Save
+                                        Changes</button>
+                                </div>
+                            </div> -->
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <form class="form-horizontal" role="form">
+                            <h6 class="lead">Re-set Password</h6>
+                            <hr class="lead">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">New-Password:</label>
+                                <div class="col-md-8" for="password">
+                                    <input class="form-control" type="password" value="" id="password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="confirmP">Confirm password:</label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="password" value="" id="confirmP">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label"></label>
+                                <div class="col-md-8">
+                                    <button class="btn btn-primary btn-sm" id="reset-password">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <a href="#" class="nav-link"><i class="fa fa-facebook-official"></i></a>
+            <a href="#" class="nav-link"><i class="fa fa-pinerest"></i></a>
+            <a href="#" class="nav-link"><i class="fa fa-instagram"></i></a>
+            <a href="#" class="nav-link"><i class="fa fa-linkedin"></i></a>
+            <a href="#" class="nav-link"><i class="fa fa-twitter"></i></a>
+        </footer>
+    </div>
+    <%- include('../partials/footer'); %>
+    <!-- /<script src="/js/acc_post.js"></script> -->
+</body>
+
+</html>
