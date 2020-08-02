@@ -3,6 +3,12 @@ body {
     margin-top: 0px;
 }
 
+.container-fluid{
+    padding-left: 0px;
+    padding-right: 0px;
+    overflow-x: hidden;
+}
+
 #nav {
     padding: 2px;
     position: fixed;
@@ -10,7 +16,14 @@ body {
     top: 0px;
     z-index: 1;
     background-color: rgb(168, 150, 150);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+ul{
+    padding:0px;
+    margin-left: 15px;
+
+}
+
 
 #navbarContent>.nav-item>.nav-link {
     color: rgb(116, 116, 167);
