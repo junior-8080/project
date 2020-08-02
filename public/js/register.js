@@ -17,7 +17,7 @@ function insertAfter(referenceNode, newNode) {
 $("#signUp").click(function (e) {
 
     e.preventDefault()
-    $.post("http://localhost:3001/api/signup", {
+    $.post("/api/signup", {
             email: document.getElementById('email').value,
             phonenumber: document.getElementById('phonenumber').value,
             password: document.getElementById('password').value,
@@ -51,7 +51,7 @@ $("#signUp").click(function (e) {
 
 $("#login").click(function (e) {
     e.preventDefault();
-    $.post("http://localhost:3001/api/signin", {
+    $.post("/api/signin", {
         email: document.getElementById('loginEmail').value,
         password: document.getElementById('loginPassword').value
     }, function (data, status) {
@@ -77,13 +77,13 @@ function dasboard(email, role) {
     if (role === 'user') {
         toastr.success(`welcome ${email}`)
         setTimeout(() => {
-            window.location.href = 'http://localhost:3001/api/homeAcc';
+            window.location.href = '/api/homeAcc';
         }, 1000)
     }
     if (role === 'admin') {
         toastr.success(`welcome ${email}`)
         setTimeout(() => {
-            window.location.href = 'http://localhost:3001/admin';
+            window.location.href = '/admin';
         }, 1000)
     }
 }

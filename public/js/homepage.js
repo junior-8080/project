@@ -1,7 +1,7 @@
 $('#logout').click(function () {
   console.log('logout')
   document.cookie = "token=" + undefined;
-  window.location.href = 'http://localhost:3001/'
+  window.location.href = '/'
 })
 
 
@@ -12,7 +12,7 @@ $('.order').click(function (event) {
   toastr.options.closeButton = true;
   toastr.success('Sending Serial number.....', '', {timeOut: 3000})
   $.ajax({
-    url: "http://localhost:3001/api/order",
+    url: "/api/order",
     data: {id:id},
     type: 'POST',
     success: function (result, satus) {
@@ -39,7 +39,7 @@ $('.send-report').click(function (event) {
   }
   console.log(data)
   $.ajax({
-    url: "http://localhost:3001/api/report",
+    url: "/api/report",
     data: data,
     type: 'POST',
     success: function (result, satus) {

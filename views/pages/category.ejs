@@ -10,7 +10,7 @@
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
-            <a class="navbar-brand" href="http://localhost:3001/"><img src="/images/logo1.jpg" width="50px"
+            <a class="navbar-brand" href="/"><img src="/images/logo1.jpg" width="50px"
                     height="50px"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
                 aria-controls="navbarContent" aria-expanded="true" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@
                 <%if(email){%>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:3001">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
                     <!-- <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -28,7 +28,7 @@
                     </form> -->
                 </ul>
                 <span class="nav-item left">
-                    <a class="nav-link pull-right" id="email" href="http://localhost:3001/api/account"><i
+                    <a class="nav-link pull-right" id="email" href="/api/account"><i
                             class="fas fa-user">&nbsp;</i><%=email%></a>
                 </span>
                 <span class="nav-item ">
@@ -41,11 +41,11 @@
                 else { %>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:3001">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
                 </ul>
                 <span class="nav-item ">
-                    <a class="nav-link pull-right" href="http://localhost:3001/api/login" id="logout"><i
+                    <a class="nav-link pull-right" href="/api/login" id="logout"><i
                             class="fas fa-sign-in-alt">&nbsp;</i>Login</a>
                 </span>
 
@@ -61,58 +61,53 @@
                     <%if(email){%>
                     <ul class="nav flex-column" id="categories">
                         <li class="nav-item">
-                            <a href="http://localhost:3001/api/homeAcc" class="nav-link">
+                            <a href="/api/homeAcc" class="nav-link">
                                 <h6 class="lead">All Products</h6>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active"
-                                href="http://localhost:3001/api/account/product/category/Electronics">Electronics</a>
+                                href="/api/account/product/category/Electronics">Electronics</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                                href="http://localhost:3001/api/account/product/category/Clothings">Clothings</a>
+                                href="/api/account/product/category/Clothings">Clothings</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                                href="http://localhost:3001/api/account/product/category/Food items">Food
+                                href="/api/account/product/category/Food items">Food
                                 items</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                                href="http://localhost:3001/api/account/product/category/Others">Others</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                                href="http://localhost:3001/api/account/product/category/Free items">Free
-                                items</a>
+                                href="/api/account/product/category/Others">Others</a>
                         </li>
                     </ul>
 
                     <% }else{%>
                     <ul class="nav flex-column" id="categories">
                         <li class="nav-item">
-                            <a href="http://localhost:3001/" class="nav-link">
+                            <a href="/" class="nav-link">
                                 <h6 class="lead">All Products</h6>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active"
-                                href="http://localhost:3001/api/product/category/Electronics">Electronics</a>
+                                href="/api/product/category/Electronics">Electronics</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                                href="http://localhost:3001/api/product/category/Clothings">Clothings</a>
+                                href="/api/product/category/Clothings">Clothings</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://localhost:3001/api/product/category/Food items">Food
+                            <a class="nav-link" href="/api/product/category/Food items">Food
                                 items</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://localhost:3001/api/product/category/Others">Others</a>
+                            <a class="nav-link" href="/api/product/category/Others">Others</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://localhost:3001/api/product/category/Free items">Free
+                            <a class="nav-link" href="/api/product/category/Free items">Free
                                 items</a>
                         </li>
                     </ul>

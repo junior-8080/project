@@ -6,7 +6,7 @@ function setfield(data) {
 }
 
 $(document).ready(function () {
-    $.get("http://localhost:3001/api/profile", function (data, status) {
+    $.get("/api/profile", function (data, status) {
         return setfield(data);
     })
 
@@ -14,7 +14,7 @@ $(document).ready(function () {
 
 $("#v-pills-home-tab").on('shown.bs.tab', function (e) {
     e.stopPropagation()
-    $.get("http://localhost:3001/api/profile", function (data, status) {
+    $.get("/api/profile", function (data, status) {
         let email = document.getElementById('profilEmail').value = data.message.user_email;
         let phonenumber = document.getElementById('profileNumber').value = data.message.phonenumber;
         //    console.log(email)
@@ -33,7 +33,7 @@ $("#save-change").click(function (e) {
         phonenumber: document.getElementById('profileNumber').value
     }
     $.ajax({
-        url: "http://localhost:3001/api/editProfile",
+        url: "/api/editProfile",
         data: data,
         type: 'PUT',
         success: function (data, satus) {
@@ -56,7 +56,7 @@ $("#reset-password").click(function (e) {
         confirmPassword: document.getElementById('confirmP').value
     }
     $.ajax({
-        url: "http://localhost:3001/api/resetpassword",
+        url: "/api/resetpassword",
         data: data,
         type: 'PUT',
         success: function (data, satus) {

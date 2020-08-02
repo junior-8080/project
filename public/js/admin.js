@@ -6,7 +6,7 @@ $("#save-change").click(function (e) {
         phonenumber: document.getElementById('profileNumber').value
     }
     $.ajax({
-        url: "http://localhost:3001/admin/editProfile",
+        url: "/admin/editProfile",
         data: data,
         type: 'PUT',
         success: function (data, satus) {
@@ -25,7 +25,7 @@ $("#save-change").click(function (e) {
 $('.view').click(function (e) {
     let element = e.target;
     let param = element.parentElement.firstElementChild.textContent;
-    console.log(`http://localhost:3001/admin/products/${param}`)
+    console.log(`/admin/products/${param}`)
     window.location = `http://localhost:3001/admin/products/${param}`;
 });
 
