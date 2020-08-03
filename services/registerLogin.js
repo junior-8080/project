@@ -3,19 +3,29 @@ const {
     Pool
 } = require('pg');
 
+// const pool = new Pool({
+//     user: 'postgres',
+//     host: 'localhost',
+//     database: 'project',
+//     password: 'abdul',
+//     port: 5432
+
+// })
+
+require("dotenv").config()
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'project',
-    password: 'abdul',
-    port: 5432
+    user: 'qfzsmktomwudcl',
+    host: 'ec2-54-236-146-234.compute-1.amazonaws.com',
+    database: 'd1a1nur5lqn037',
+    password: 'd68f2ef498507e4c39c3acfae50c61cf361cfda9e8c5d972ff24a61cf6d54de2',
+    port: 5432,
+   ssl: true
 
 })
 
 function createUser(data, callback) {
-
-    let sql = 'insert into users(user_email,user_password,phonenumber) values($1,$2,$3)';
-    let values = [data.email, data.password,data.phonenumber]
+    let sql = 'insert into users(user_email,user_password,phonenumber,roles) values($1,$2,$3,$4)';
+    let values = [data.email, data.password,data.phonenumber,data.roles]
     // let values = [data.email, data.password]
       console.log(values);
     pool.connect((err, client, release) => {
@@ -41,6 +51,7 @@ function createUser(data, callback) {
 
 function fetchUser(data, callback) {
     //queries 
+    console.log(pool)
     let value = [data];
     // console.log(value);
     let sql = `select * from users where user_id = $1`;

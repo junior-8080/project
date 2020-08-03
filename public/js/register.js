@@ -55,6 +55,7 @@ $("#login").click(function (e) {
         email: document.getElementById('loginEmail').value,
         password: document.getElementById('loginPassword').value
     }, function (data, status) {
+        console.log(data)
         if (typeof (data.access_token) !== "undefined" || typeof (data.admin_access_token) !== "undefined") {
             data.user_profile.role === 'user'? document.cookie = `token=${data.access_token};SameSite=Lax`:document.cookie = `admin_token=${data.admin_access_token};Same-Site=Lax;path=/admin`;
             dasboard(data.user_profile.email,data.user_profile.role);

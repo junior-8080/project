@@ -34,10 +34,16 @@ function verifyToken(req, res, next) {
 
 // SIGNUP.
 function signUp(req, res) {
-    let data = req.body;
+    console.log(req.body);
     let email = req.body.email;
+    let data = req.body;
     let phonenumber = req.body.phonenumber
-
+    if(req.body.admin){
+        data.roles ='admin';
+    }else{
+        data.roles ='user';
+    }
+   
     //validate credentials.
     console.log(req.body);
     const error = validationResult(req);

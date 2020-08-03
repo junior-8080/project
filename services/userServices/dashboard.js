@@ -2,15 +2,26 @@ const {
     Client,
     Pool
 } = require('pg');
+require("dotenv").config();
 
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'project',
-    password: 'abdul',
-    port: 5432
+    user: process.env.USER_DB,
+    host: process.env.HOST,
+    database: process.env.DATABASE,
+    password: process.env.PASSWORD,
+    port: 5432,
+    ssl: true
 
-})
+});
+// const pool = new Pool({
+//     user: 'qfzsmktomwudcl',
+//     host: 'ec2-54-236-146-234.compute-1.amazonaws.com',
+//     database: 'd1a1nur5lqn037',
+//     password: 'd68f2ef498507e4c39c3acfae50c61cf361cfda9e8c5d972ff24a61cf6d54de2',
+//     port: 5432,
+//     ssl: true
+
+// })
 
 function searchEdit(data, callback) {
     //queries 

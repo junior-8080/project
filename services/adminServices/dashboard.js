@@ -2,15 +2,35 @@ const {
     Client,
     Pool
 } = require('pg');
+require('dotenv').config();
+// const pool = new Pool({
+//     user: 'postgres',
+//     host: 'localhost',
+//     database: 'project',
+//     password: 'abdul',
+//     port: 5432
+
+// });
 
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'project',
-    password: 'abdul',
-    port: 5432
+    user: process.env.USER_DB,
+    host: process.env.HOST,
+    database: process.env.DATABASE,
+    password: process.env.PASSWORD,
+    port: 5432,
+    ssl: true
 
-})
+});
+
+// const pool = new Pool({
+//     user: 'qfzsmktomwudcl',
+//     host: 'ec2-54-236-146-234.compute-1.amazonaws.com',
+//     database: 'd1a1nur5lqn037',
+//     password: 'd68f2ef498507e4c39c3acfae50c61cf361cfda9e8c5d972ff24a61cf6d54de2',
+//     port: 5432,
+//    ssl: true
+
+// })
 
 
 
@@ -38,8 +58,7 @@ function AllUsers(callback) {
 function AllProducts(callback) {
 
     let sql = `select products.user_id,products.product_id,products.product_name,products.product_price,products.category_name,product_date,users.user_id,users.user_email
-     from products inner join users on products.user_id = users.user_id
-    where product_id > 2070 order by products.product_id`;
+     from products inner join users on products.user_id = users.user_id order by products.product_id`;
 
     // let sql = `select products.* from product_image inner join products on product_image.product_id = products.product_id
     //  inner join images on images.image_id = product_image.image_id`

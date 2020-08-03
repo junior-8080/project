@@ -3,19 +3,28 @@ const {
     Pool
 } = require('pg');
 
+// const pool = new Pool({
+//     user: 'postgres',
+//     host: 'localhost',
+//     database: 'project',
+//     password: 'abdul',
+//     port: 5432
+
+// })
+
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'project',
-    password: 'abdul',
-    port: 5432
+    user: process.env.USER_DB,
+    host: process.env.HOST,
+    database: process.env.DATABASE,
+    password: process.env.PASSWORD,
+    port: 5432,
+    ssl: true
 
-})
-
+});
 function fetchProducts(callback) {
 
     let sql = `select * from products inner join product_image  on products.product_id = product_image.product_id 
-    inner join images on images.image_id = product_image.image_id  and products.product_id > 2070 order by products.product_id`;
+    inner join images on images.image_id = product_image.image_id   order by products.product_id`;
 
     // let sql = `select products.* from product_image inner join products on product_image.product_id = products.product_id
     //  inner join images on images.image_id = product_image.image_id`
@@ -35,7 +44,6 @@ function fetchProducts(callback) {
                 console.log(err);
                 return callback(err);
             }
-            console.log(result.rows)
 
             let newProductArray = [];
             let current = null;
@@ -77,7 +85,7 @@ function fetchProducts(callback) {
 
 function fetchProductByCat(data, callback) {
     let sql = `select * from products inner join product_image  on products.product_id = product_image.product_id 
-    inner join images on images.image_id = product_image.image_id where products.category_name = $1 and products.product_id > 2070 order by products.product_id `;
+    inner join images on images.image_id = product_image.image_id where products.category_name = $1  order by products.product_id `;
     let values = [data.category]
     console.log(values)
     pool.connect((err, client, release) => {

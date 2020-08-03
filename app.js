@@ -58,6 +58,11 @@ app.get('/api/signup', (req, res) => {
 app.get('/api/login', (req, res) => {
     res.render('pages/login')
 });
+
+app.get('/admin/signup', (req, res) => {
+    res.render('pages/adminSignUp')
+});
+
 app.get('/api/account', controllerRegister.verifyToken, controllerDashboard.account)
 app.get('/api/profile', controllerRegister.verifyToken, controllerDashboard.Profile);
 app.get('/api/homeAcc/', controllerRegister.verifyToken, controllerProducts.accProducts);
@@ -93,7 +98,30 @@ app.post('/api/signup', [
     // Indicates the success of this synchronous custom validator
     return true;
 }), controllerRegister.signUp);
-// sign
+
+app.post('/admin/signup', [
+    check('email').isEmail().withMessage('Invalid Email'),
+    check('password').exists()
+    .withMessage('Password should not be empty, minimum eight characters, at least one letter, one number and one special character')
+    .isLength({
+        min: 8
+    })
+    .withMessage('Password should not be empty, minimum eight characters, at least one letter, one number and one special character')
+    .matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$.!%*#?&])[A-Za-z\d@$.!%*#?&]{8,}$/)
+    .withMessage('Password should not be empty, minimum eight characters, at least one letter, one number and one special character'),
+    check('phonenumber').exists().withMessage('phonenumber should not be empty').isLength({
+        min: 10,
+        max: 16
+    }).withMessage('password should not be empty and must start and must be 10 digits')
+], body('confirmPassword').custom((value, {
+    req
+}) => {
+    if (value !== req.body.password) {
+        throw new Error('Password confirmation does not match password');
+    }
+    // Indicates the success of this synchronous custom validator
+    return true;
+}), controllerRegister.signUp);
 
 app.put('/api/resetpassword', [check('password').isLength({
     min: 1
@@ -108,7 +136,6 @@ app.put('/api/resetpassword', [check('password').isLength({
 
 app.post('/api/signin', controllerRegister.signIn);
 
-app.post('/api/report', controllerOrder.report);
 
 app.put('/api/editProfile', [
     check('email').exists().isEmail().withMessage('email should not be empty or invalid'),

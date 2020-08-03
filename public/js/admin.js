@@ -116,3 +116,41 @@ $('#delete-btn').click(function (e) {
     window.location = '/admin/#products'
 
 });
+
+
+$("#signUpAdmin").click(function (e) {
+
+    e.preventDefault()
+    $.post("/admin/signup", {
+          
+            email: document.getElementById('email').value,
+            phonenumber: document.getElementById('phonenumber').value,
+            password: document.getElementById('password').value,
+            confirmPassword: document.getElementById('confirmPassword').value,
+            admin:'admin'
+        },
+        function (data, status) {
+            let errors = data.errors;
+            let array = [];
+            if (typeof (errors) !== "undefined") {
+                errors.forEach((data) => {
+                    let el = document.createElement("span");
+                    el.innerHTML = data.msg;
+                    el.className = "error"
+                    let div = document.getElementById(data.param);
+                    div.nextElementSibling ? null : insertAfter(div, el);
+                })
+
+            } else if (data.errorMessage) {
+                let el = document.createElement("span");
+                el.innerHTML = data.errorMessage;
+                el.className = "error"
+                let div = document.getElementById(data.param);
+                div.nextElementSibling ? null : insertAfter(div, el);
+
+            } else {
+                let url = data.url;
+                window.location = url;
+            }
+        });
+});
