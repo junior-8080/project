@@ -282,7 +282,7 @@ function editProducStatus(data, callback) {
 }
 
 function productInspection(callback) {
-    let sql = `select product_id,orderd_data from products where products.product_id > 2073`;
+    let sql = `select product_id,orderd_data from products`;
     pool.connect((err, client, release) => {
         if (err) {
             console.log(err);
