@@ -91,7 +91,7 @@ function AllProducts(callback) {
 function aProduct(data, callback) {
 
     let sql = `select * from products inner join product_image  on products.product_id = product_image.product_id 
-        inner join images on images.image_id = product_image.image_id  and products.product_id = $1 `;
+        inner join images on images.image_id = product_image.image_id  and products.product_id = $1 where products.product_id != 3 `;
 
     let values = [data]
     pool.connect((err, client, release) => {

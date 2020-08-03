@@ -130,6 +130,7 @@ function allProducts(req, res) {
 function aProduct(req, res) {
     let param = req.params.id;
     param = parseInt(param);
+    console.log(param)
     const decoded = jwt.verify(req.token, 'secretKey', (err, decoded) => {
         console.log(typeof (decoded));
         if (err) {
