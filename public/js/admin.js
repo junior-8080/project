@@ -26,7 +26,7 @@ $('.view').click(function (e) {
     let element = e.target;
     let param = element.parentElement.firstElementChild.textContent;
     console.log(`/admin/products/${param}`)
-    window.location = `http://localhost:3001/admin/products/${param}`;
+    window.location = `/admin/products/${param}`;
 });
 
 $(".imgAdd").click(function () {
@@ -106,7 +106,7 @@ $('#delete-btn').click(function (e) {
     let Id = document.getElementById('product-id').textContent.replace(/\s/g, '').split(':')[1];
     Id = parseInt(Id);
     $.ajax({
-        url: `http://localhost:3001/admin/deleteProduct/${Id}`,
+        url: `/admin/deleteProduct/${Id}`,
         type: 'DELETE',
         success: function (data, satus) {
             toastr.success(data.message);
