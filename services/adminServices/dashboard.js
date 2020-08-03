@@ -91,10 +91,6 @@ function aProduct(data, callback) {
     let sql = `select * from products inner join product_image  on products.product_id = product_image.product_id 
         inner join images on images.image_id = product_image.image_id  and products.product_id = $1 order by products.product_id`;
 
-    // let sql = `select products.* from product_image inner join products on product_image.product_id = products.product_id
-    //  inner join images on images.image_id = product_image.image_id`
-
-    // let sql = `select products.* from products inner join `
     let values = [data]
     pool.connect((err, client, release) => {
         if (err) {
@@ -116,7 +112,6 @@ function aProduct(data, callback) {
             let previousId = null;
             result.rows.forEach(element => {
                 element.images = [];
-                // console.log("123")
                 if (element.product_id != previousId) {
                     if (current != null) {
                         element.images.push(element.image_path);
