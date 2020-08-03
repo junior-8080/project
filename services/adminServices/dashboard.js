@@ -58,7 +58,7 @@ function AllUsers(callback) {
 function AllProducts(callback) {
 
     let sql = `select products.user_id,products.product_id,products.product_name,products.product_price,products.category_name,product_date,users.user_id,users.user_email
-     from products inner join users on products.user_id = users.user_id order where products.product_id != 3 by products.product_id `;
+     from products inner join users on products.user_id = users.user_id order where products.product_id != 3 order by products.product_id `;
 
     // let sql = `select products.* from product_image inner join products on product_image.product_id = products.product_id
     //  inner join images on images.image_id = product_image.image_id`
