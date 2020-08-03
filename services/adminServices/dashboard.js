@@ -58,13 +58,7 @@ function AllUsers(callback) {
 function AllProducts(callback) {
 
     let sql = `select products.user_id,products.product_id,products.product_name,products.product_price,products.category_name,product_date,users.user_id,users.user_email
-     from products inner join users on products.user_id = users.user_id  where products.product_id != 3 order by products.product_id `;
-
-    // let sql = `select products.* from product_image inner join products on product_image.product_id = products.product_id
-    //  inner join images on images.image_id = product_image.image_id`
-
-    // let sql = `select products.* from products inner join `
-    // let values = [data]    
+     from products inner join users on products.user_id = users.user_id  where products.product_id != 3 AND products.product_id != 8 order by products.product_id `;  
     pool.connect((err, client, release) => {
         if (err) {
             console.log(err);
