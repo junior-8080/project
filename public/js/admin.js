@@ -77,7 +77,7 @@ $('#post').click(function (e) {
     data.append("status", select)
     data.append("category", cat)
     $.ajax({
-        url: 'http://localhost:3001/admin/post',
+        url: '/admin/post',
         type: 'POST',
         data: data,
         enctype: 'multipart/form-Data',
