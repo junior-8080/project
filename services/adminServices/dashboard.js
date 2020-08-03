@@ -78,7 +78,9 @@ function AllProducts(callback) {
                 console.log(err);
                 return callback(err);
             }
-            // console.log(result.rows)
+            result.forEach(item =>{
+                item.product_price = element.product_price.replace('$', '');
+            })
             return callback(null, result.rows.reverse());
         })
     })
@@ -137,6 +139,7 @@ function aProduct(data, callback) {
             });
             console.log(newProductArray)
             console.log('products fetched');
+            console.log(newProductArray[0])
             return callback(null, newProductArray[0]);
         })
     })
