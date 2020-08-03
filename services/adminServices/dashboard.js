@@ -78,8 +78,8 @@ function AllProducts(callback) {
                 console.log(err);
                 return callback(err);
             }
-            result.forEach(item =>{
-                item.product_price = element.product_price.replace('$', '');
+            result.rows.forEach(item =>{
+                item.product_price = item.product_price.replace('$', '');
             })
             return callback(null, result.rows.reverse());
         })
@@ -91,7 +91,7 @@ function AllProducts(callback) {
 function aProduct(data, callback) {
 
     let sql = `select * from products inner join product_image  on products.product_id = product_image.product_id 
-        inner join images on images.image_id = product_image.image_id  and products.product_id = $1 order by products.product_id`;
+        inner join images on images.image_id = product_image.image_id  and products.product_id = $1 `;
 
     let values = [data]
     pool.connect((err, client, release) => {
