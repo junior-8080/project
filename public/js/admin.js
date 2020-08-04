@@ -158,6 +158,6 @@ $("#signUpAdmin").click(function (e) {
 
 $('#admin-logout').click(function () {
     console.log('logout')
-    document.cookie = "token=" + undefined;
+    document.cookie = "admin_token=" + undefined;
     window.location.href = '/'
   })
