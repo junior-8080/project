@@ -49,3 +49,4 @@ $('.send-report').click(function (event) {
     }
   })
 });
+

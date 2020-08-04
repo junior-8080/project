@@ -155,3 +155,9 @@ $("#signUpAdmin").click(function (e) {
             }
         });
 });
+
+$('#admin-logout').click(function () {
+    console.log('logout')
+    document.cookie = "token=" + undefined;
+    window.location.href = '/'
+  })
