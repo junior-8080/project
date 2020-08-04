@@ -69,7 +69,8 @@ $(function () {
 
 $('#post').click(function (e) {
     e.preventDefault()
-    e.stopPropagation()
+    e.stopPropagation();
+    toastr.success("uploading...");
     let form = $('#requestForm')[0];
     let data = new FormData(form);
     let select = $('#status').val()
