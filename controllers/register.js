@@ -19,7 +19,7 @@ function verifyToken(req, res, next) {
         // const bearerArray = bearerHeader.split(' ');
         // const token = bearerArray[1];
         // console.log(token)controllerRegister.verifyToken,
-        return res.redirect('http://localhost:3001/')
+        return res.redirect('/')
 
     } else {
         console.log(req.body)
@@ -98,7 +98,7 @@ function signUp(req, res) {
                         }
                         res.json({
                             status: 200,
-                            url: 'http://localhost:3001/api/login',
+                            url: '/api/login',
                             message:'user created'
                         })
                     })

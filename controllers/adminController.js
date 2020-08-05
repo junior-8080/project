@@ -22,7 +22,7 @@ function verifyToken(req, res, next) {
         // const bearerArray = bearerHeader.split(' ');
         // const token = bearerArray[1];
         // console.log(token)controllerRegister.verifyToken,
-        return res.redirect('http://localhost:3001/api/login')
+        return res.redirect('/api/login')
 
     } else {
         console.log(req.body)
