@@ -78,6 +78,7 @@ ul {
     max-height: 100vh;
     justify-content: center;
     overflow-y: scroll;
+    margin-bottom: 20px;
 }
 
 .navbar-toggler:focus,
@@ -189,13 +190,6 @@ footer>.nav-link>i {
     .col-2 {
         height: auto;
     }
-
-    #products {
-        overflow-y: auto;
-        max-height: none;
-
-    }
-
     #categories {
         margin-left: 0px;
         display: inline;
@@ -224,7 +218,6 @@ footer>.nav-link>i {
     #products {
         overflow-y: auto;
         max-height: none;
-
     }
 
 }
