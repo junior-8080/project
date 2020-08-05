@@ -40,7 +40,7 @@ function Order(req, res) {
                     message: "Already ordered"
                 })
             } else {
-                fetch(`https://apps.mnotify.net/smsapi?key=HNJBKO9txQTVO6LD4v7bhVKT8&to=0541152085&msg=Serial Number: ${serialNumber}&sender_id=PROJECT2020`)
+                fetch(`https://apps.mnotify.net/smsapi?key=HNJBKO9txQTVO6LD4v7bhVKT8&to=${number}&msg=Serial Number: ${serialNumber}&sender_id=PROJECT2020`)
                     .then(res => res.json())
                     .then(body => {
                         console.log(body.code);
