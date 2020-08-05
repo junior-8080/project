@@ -54,13 +54,14 @@ ul{
 }
 
 .col-2{
-    height: 100vh;
+    height: 100vh
 }
 
 #categories {
     padding: 5px;
     background-color: rgb(211, 205, 205);
     height: 100%;
+    list-style: none;
 
 }
 
@@ -190,19 +191,24 @@ footer > .nav-link > i {
     #categories{
         display: inline;
     }
+    #categories > li{
+        display: inline;
+    }
     #categories > li > a {
         font-size: small;
     }
     #categories > h6 {
-        visibility: hidden;
+        display: none;
     }
     .row{
         margin-top: 20px;
     }
-    .category-tag {
-        margin-top: 25px;
-    }
     #categories > li > a > h6 {
         font-size: small;
     }
+    #products {
+        height: auto;
+
+    }
+
 }
