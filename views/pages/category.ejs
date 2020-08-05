@@ -21,10 +21,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
-                    <!-- <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
-                    </form> -->
                 </ul>
                 <span class="nav-item left">
                     <a class="nav-link pull-right" id="email" href="/api/account"><i
@@ -34,7 +30,6 @@
                     <a class="nav-link pull-right" href="#" id="logout"><i
                             class="fas fa-sign-out-alt">&nbsp;</i>logout</a>
                 </span>
-
 
                 <% }
                 else { %>
@@ -56,7 +51,7 @@
             <h5><i class="fa fa-tag lead"></i>&nbsp;<%=category%></h5>
             </div>
             <div class="row">
-                <div class="md-col-2 col-sm-12">
+                <div class="col-md-2 col-sm-12">
                     <%if(email){%>
                     <ul class="nav flex-column" id="categories">
                         <li class="nav-item">

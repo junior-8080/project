@@ -182,18 +182,18 @@ footer > .nav-link > i {
     border-bottom: 2px solid rgb(116, 116, 167);
 }
 
-@media(max-width:768px){
+@media screen and (max-width: 600px){
     .col-2{
         height: auto;
     }
 
     #categories{
-        height:max-content;
-        display: flexbox;
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: inline;
     }
     #categories > li > a {
         font-size: small;
+    }
+    #categories > h6 {
+        visibility: hidden;
     }
 }
