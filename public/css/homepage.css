@@ -184,7 +184,13 @@ footer > .nav-link > i {
 }
 
 @media screen and (max-width: 768px){
-  
+   
+   .col-2 {
+       height: auto;
+   }
+    ul {
+       margin-left: 0px;
+   }
    ul#categories li{
         display: inline;
     }
