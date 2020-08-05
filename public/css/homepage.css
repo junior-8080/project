@@ -199,7 +199,6 @@ footer>.nav-link>i {
     #categories {
         margin-left: 0px;
         display: inline;
-        height: max-content;
     }
 
     #categories>li {
@@ -224,6 +223,7 @@ footer>.nav-link>i {
     }
     #products {
         overflow-y: auto;
+        max-height: none;
 
     }
 
