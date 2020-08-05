@@ -181,3 +181,19 @@ footer > .nav-link > i {
     text-align: center;
     border-bottom: 2px solid rgb(116, 116, 167);
 }
+
+@media(max-width:768px){
+    .col-2{
+        height: auto;
+    }
+
+    #categories{
+        height:max-content;
+        display: flexbox;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #categories > li > a {
+        font-size: small;
+    }
+}
