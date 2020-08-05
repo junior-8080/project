@@ -170,7 +170,7 @@ footer {
     display: flex;
     justify-content: space-evenly;
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 150px;
     font-size: x-large;
     background-color: rgb(116, 116, 167);
 
@@ -190,7 +190,7 @@ footer>.nav-link>i {
    
     #categories {
         margin-left: 0px;
-        height: max-content;
+        height:auto;
     }
 
     #categories>li {
@@ -215,7 +215,7 @@ footer>.nav-link>i {
     }
     #products {
         overflow-y: auto;
-        /* max-height: none; */
+        max-height: none;
     }
 
 }
