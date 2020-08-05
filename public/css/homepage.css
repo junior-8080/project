@@ -184,7 +184,7 @@ footer > .nav-link > i {
 
 @media screen and (max-width: 600px){
     .col-2{
-        height: auto;
+        display: inline;
     }
 
     #categories{
@@ -195,5 +195,14 @@ footer > .nav-link > i {
     }
     #categories > h6 {
         visibility: hidden;
+    }
+    .row{
+        margin-top: 20px;
+    }
+    .category-tag {
+        margin-top: 25px;
+    }
+    #categories > li > a > h6 {
+        font-size: small;
     }
 }
