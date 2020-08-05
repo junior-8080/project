@@ -185,32 +185,30 @@ footer > .nav-link > i {
    .col-2 {
        height: auto;
    }
-    ul {
-       margin-left: 0px;
-   }
-   #catergories {
+   ul#catergories {
        display: inline-block;
        height: max-content;
+       margin-left: 0px;
    }
-   #categories > .nav-item{
+   ul#categories > .nav-item{
         display: inline;
         margin-right:3px;
     }
-    #categories > li > a {
+    ul#categories > li > a {
         font-size: small;
     }
-    #categories > h6 {
+    ul#categories > h6 {
         display: none;
     }
     .row{
         margin-top: 20px;
     }
-    #categories > li > a > h6 {
+    ul#categories > li > a > h6 {
         font-size: small;
     }
     #products {
         overflow-y: auto;
-        height: auto;
+        max-height: none;
     }
 
 }
