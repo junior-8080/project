@@ -3,7 +3,7 @@ body {
     margin-top: 0px;
 }
 
-.container-fluid{
+.container-fluid {
     padding-left: 0px;
     padding-right: 0px;
     overflow-x: hidden;
@@ -18,8 +18,9 @@ body {
     background-color: rgb(168, 150, 150);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-ul{
-    padding:0px;
+
+ul {
+    padding: 0px;
     margin-left: 15px;
 
 }
@@ -38,8 +39,9 @@ ul{
 #navbarContent>.nav-item>#logout:hover {
     color: red;
 }
-.navbar-nav > .nav-item > .nav-link {
-    color:rgb(116, 116, 167);
+
+.navbar-nav>.nav-item>.nav-link {
+    color: rgb(116, 116, 167);
     font-weight: 600;
 }
 
@@ -49,6 +51,7 @@ ul{
     height: 100%;
     list-style: none;
 }
+
 #categories>.nav-item>.nav-link {
     color: rgb(116, 116, 167);
     font-weight: 600;
@@ -59,7 +62,7 @@ ul{
     background-color: whitesmoke;
 }
 
-.col-2{
+.col-2 {
     height: 100vh
 }
 
@@ -168,46 +171,52 @@ footer {
     padding: 20px;
     margin-top: 50px;
     font-size: x-large;
-    background-color:rgb(116, 116, 167) ;
+    background-color: rgb(116, 116, 167);
 
 }
 
-footer > .nav-link > i {
-    color:#ffffff;
+footer>.nav-link>i {
+    color: #ffffff;
 }
-#profile-header{
+
+#profile-header {
     text-align: center;
     border-bottom: 2px solid rgb(116, 116, 167);
 }
 
-@media screen and (max-width: 768px){
-   
-   .col-2 {
-       height: auto;
-   }
-    ul {
-       margin-left: 0px;
-       display: inline;
-   }
-  ul > li {
-      display: inline;
-  }
-   #categories > .nav-item{
-        display: inline;
-        margin-right:3px;
+@media screen and (max-width: 768px) {
+
+    .col-2 {
+        height: auto;
     }
-    #categories > li > a {
+
+    #categories {
+        margin-left: 0px;
+        display: inline;
+        height: max-content;
+    }
+
+    #categories>li {
+        display: inline;
+        margin-right: 3px;
+    }
+
+    #categories>li>a {
         font-size: small;
     }
-    #categories > h6 {
+
+    #categories>h6 {
         display: none;
     }
-    .row{
+
+    .row {
         margin-top: 20px;
     }
-    #categories > li > a > h6 {
+
+    #categories>li>a>h6 {
         font-size: small;
     }
+
     #products {
         overflow-y: auto;
         max-height: none;
