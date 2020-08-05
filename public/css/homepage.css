@@ -188,7 +188,11 @@ footer > .nav-link > i {
     ul {
        margin-left: 0px;
    }
-   #categories > li{
+   #catergories {
+       display: inline-block;
+       height: max-content;
+   }
+   #categories > .nav-item{
         display: inline;
         margin-right:3px;
     }
@@ -206,7 +210,7 @@ footer > .nav-link > i {
     }
     #products {
         overflow-y: auto;
-
+        height: auto;
     }
 
 }
