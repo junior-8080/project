@@ -190,6 +190,12 @@ footer>.nav-link>i {
         height: auto;
     }
 
+    #products {
+        overflow-y: auto;
+        max-height: none;
+
+    }
+
     #categories {
         margin-left: 0px;
         display: inline;
@@ -216,10 +222,8 @@ footer>.nav-link>i {
     #categories>li>a>h6 {
         font-size: small;
     }
-
     #products {
         overflow-y: auto;
-        max-height: none;
 
     }
 
