@@ -191,7 +191,7 @@ footer > .nav-link > i {
     ul {
        margin-left: 0px;
    }
-   ul#categories li{
+   .nav-item{
         display: inline;
     }
     #categories > li > a {
