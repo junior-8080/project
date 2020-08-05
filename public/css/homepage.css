@@ -183,15 +183,9 @@ footer > .nav-link > i {
     border-bottom: 2px solid rgb(116, 116, 167);
 }
 
-@media screen and (max-width: 600px){
-    .col-2{
-        display: inline;
-    }
-
-    #categories{
-        display: inline;
-    }
-    #categories > li{
+@media screen and (max-width: 768px){
+  
+   ul#categories li{
         display: inline;
     }
     #categories > li > a {
@@ -208,6 +202,7 @@ footer > .nav-link > i {
     }
     #products {
         height: auto;
+        overflow-y: auto;
 
     }
 
